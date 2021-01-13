@@ -1,5 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
+import * as firebase from 'firebase';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBuPyfClts_PTeQ3qBFvMaTP-DYMUoajz0",
+  authDomain: "instagram-app-c588a.firebaseapp.com",
+  projectId: "instagram-app-c588a",
+  storageBucket: "instagram-app-c588a.appspot.com",
+  messagingSenderId: "112620215617",
+  appId: "1:112620215617:web:b0573b94b9efda1027d5c0"
+};
+
+if(firebase.apps.length === 0){
+  firebase.initializeApp(firebaseConfig)
+}
+
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { StyleSheet, Text, View } from 'react-native';
