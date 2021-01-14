@@ -38,4 +38,4 @@ const mapStateToProps = (store) => ({
 })
 const mapDispatchProps = (dispatch) => bindActionCreators({fetchUser}, dispatch);
 
-export default connect(null, mapDispatchProps)(Main);
+export default connect(mapStateToProps, mapDispatchProps)(Main);
