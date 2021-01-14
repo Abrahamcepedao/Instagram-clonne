@@ -1,7 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native';
 import React, { useState } from 'react';
 import { View, TextInput, Image, Button } from 'react-native'
-import { useState } from 'react/cjs/react.development'
 import firebase from '../../database/firebase';
 
 export default function Save(props) {
@@ -22,7 +21,7 @@ export default function Save(props) {
             console.log(`transferred: ${snapshot.bytesTransferred}`)
         }
         const taskCompleted = () => {
-            snapshot.ref.getDownloadURL().then((snapshot) => {
+            task.snapshot.ref.getDownloadURL().then((snapshot) => {
                 savePostData(snapshot)
                 console.log(snapshot)
             })
