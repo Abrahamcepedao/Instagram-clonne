@@ -4,7 +4,7 @@ import firebase from '../../database/firebase';
 
 export default function Search() {
     const [users, setUsers] = useState([])
-    const fetchUseers = (search) => {
+    const fetchUsers = (search) => {
         firebase.db
             .collection('users')
             .where('name', '>=', search)
@@ -20,7 +20,15 @@ export default function Search() {
     }
     return (
         <View>
-            <Text>Search</Text>
+            <TextInput placeholder="Type here..." onChange={(search) => fetchUsers(search)}/>
+            <FlatList
+                numColumns={1}
+                horizontal={false}
+                data={users}
+                renderItem={({item}) => (
+                    <TexT>{item.name}</TexT>
+                )}
+            />
         </View>
     )
 }
